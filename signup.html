@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Tracker</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <script>
+        function checkPasswords(event) {
+            var password = document.getElementsByName("password")[0].value;
+            var repeatPassword = document.getElementsByName("repeatPassword")[0].value;
+            if (password !== repeatPassword) {
+                addIncorrectPasswordText();
+                event.preventDefault();
+                return false;
+            } else {
+                let existingError = document.getElementById("password-error");
+                if (existingError) {
+                    existingError.remove();
+                }
+            }
+            return true;
+        }
+        function addIncorrectPasswordText() {
+            let existingError = document.getElementById("password-error");
+            if (!existingError) {
+                const newDiv = document.createElement("div");
+                newDiv.id = "password-error";
+                newDiv.style.color = "red";
+                newDiv.style.marginTop = "-20px"
+                const newContent = document.createTextNode("Please enter a valid password.");
+                newDiv.appendChild(newContent);
+                const currentDiv = document.getElementsByName("repeatPassword")[0];
+                currentDiv.insertAdjacentElement('afterend', newDiv);
+            }
+        }
+
+        function addIncorrectEmailText() {
+            let existingError = document.getElementById("email-error");
+            if (!existingError) {
+                const newDiv = document.createElement("div");
+                newDiv.id = "email-error";
+                newDiv.style.color = "red";
+                newDiv.style.marginTop = "-20px"
+                const newContent = document.createTextNode("Please enter a valid email.");
+                newDiv.appendChild(newContent);
+                const currentDiv = document.getElementsByName("email")[0];
+                currentDiv.insertAdjacentElement('afterend', newDiv);
+            }
+        }
+
+        function checkEmail(event) {
+            const email = document.getElementsByName("email")[0];
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (!email.value.match(validRegex)) {
+                addIncorrectEmailText();
+                event.preventDefault();
+                return false;
+            } else {
+                let existingError = document.getElementById("email-error");
+                if (existingError) {
+                    existingError.remove();
+                }
+            }
+            return true;
+        }
+
+        function validateForm(event) {
+            if (checkPasswords(event) && checkEmail(event)) {
+                return true;
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div>  
+        <a href="index.html">
+            <h1 class="medi-tracker-top-text">MediTracker</h1>
+        </a>
+        <a href="login.html">
+            <h2 class="login-signup-nav-menu" id="login">Login</h2>
+        </a>
+        <a href="signup.html">
+            <h2 class="login-signup-nav-menu" id="signup">Sign Up</h2>
+        </a>
+    </div>
+    <form onsubmit="validateForm(event)">
+        <div class="formContainer">
+           <h1>Create An Account</h1>
+           <label for="username"><b>Username</b></label>
+           <input type="text" placeholder="Username" name="username" required>
+           <label for="email"><b>Email</b></label>
+           <input type="text" placeholder="Email" name="email" required>
+           <label for="password"><b>Password</b></label>
+           <input type="password" placeholder="Password" name="password" required>
+           <label for="repeatPassword"><b>Repeat Password</b></label>
+           <input type="password" placeholder="Repeat Password" name="repeatPassword" required>
+           <label>
+              <input type="checkbox" checked="checked" name="remember" style="margin-bottom: 15px"> Remember me
+           </label>
+           <div>
+              <button type="submit" class="signup-button">Sign Up</button>
+           </div>
+        </div>
+     </form>
+</body>
+</html>

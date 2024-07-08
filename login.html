@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Tracker</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <script>
+        function checkPassword(event) {
+
+        }
+        function addIncorrectPasswordText() {
+            let existingError = document.getElementById("password-error");
+            if (!existingError) {
+                const newDiv = document.createElement("div");
+                newDiv.id = "password-error";
+                newDiv.style.color = "red";
+                newDiv.style.marginTop = "-20px"
+                const newContent = document.createTextNode("Please enter a valid password.");
+                newDiv.appendChild(newContent);
+                const currentDiv = document.getElementsByName("password")[0];
+                currentDiv.insertAdjacentElement('afterend', newDiv);
+            }
+        }
+
+        function addIncorrectUserText() {
+            let existingError = document.getElementById("username-error");
+            if (!existingError) {
+                const newDiv = document.createElement("div");
+                newDiv.id = "username-error";
+                newDiv.style.color = "red";
+                newDiv.style.marginTop = "-20px"
+                const newContent = document.createTextNode("Please enter a username.");
+                newDiv.appendChild(newContent);
+                const currentDiv = document.getElementsByName("username")[0];
+                currentDiv.insertAdjacentElement('afterend', newDiv);
+            }
+        }
+
+        function checkUser(event) {
+
+        }
+
+        function validateForm(event) {
+            if (checkPassword(event) && checkUser(event)) {
+                return true;
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div>  
+        <a href="index.html">
+            <h1 class="medi-tracker-top-text">MediTracker</h1>
+        </a>
+        <a href="login.html">
+            <h2 class="login-signup-nav-menu" id="login">Login</h2>
+        </a>
+        <a href="signup.html">
+            <h2 class="login-signup-nav-menu" id="signup">Sign Up</h2>
+        </a>
+    </div>
+    <form onsubmit="validateForm(event)">
+        <div class="formContainer">
+           <h1>Login to Existing Account</h1>
+           <label for="username"><b>Username</b></label>
+           <input type="text" placeholder="Username" name="username" required>
+           <label for="password"><b>Password</b></label>
+           <input type="password" placeholder="Password" name="password" required>
+           <label>
+              <input type="checkbox" checked="checked" name="remember" style="margin-bottom: 15px"> Remember me
+           </label>
+           <div>
+              <button type="submit" class="signup-button">Login</button>
+           </div>
+        </div>
+     </form>
+</body>
+</html>

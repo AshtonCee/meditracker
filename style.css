@@ -1,0 +1,151 @@
+html {
+    font-family: "quicksand";
+    font-weight: 500;
+    background-color: #10002b;
+    color: #9d4edd;
+}
+
+.medi-tracker-top-text {
+    margin-left: 37px;
+    display: inline-block;
+    color: #9d4edd;
+    text-decoration: none;
+}
+
+.login-signup-nav-menu {
+    float: right;
+}
+
+#login {
+    padding-right: 37px;
+}
+
+#signup {
+    padding-right: 20px
+}
+
+#login, #signup {
+    color: #9d4edd;
+    text-decoration: none;
+}
+
+#login:hover, #signup:hover {
+    color: #e0aaff;
+}
+
+#login:visited, #signup:visited {
+    color: #9d4edd;
+}
+
+#login:active, #signup:active {
+    color: #9d4edd;
+}
+
+.medi-tracker-top-text:active {
+    color: #9d4edd;
+}
+
+.medi-tracker-top-text:hover {
+    color: #e0aaff;
+}
+
+.medi-tracker-top-text:visited {
+    color: #9d4edd;
+}
+
+.medi-tracker-top-text:link {
+    color: #9d4edd;
+}
+
+#top-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+#top-head li {
+    font-weight: 700;
+    list-style-type: none;
+    vertical-align: middle;
+    padding: 20px;
+    margin-left: 20px;
+    position: relative;
+    margin-top: -30px;
+}
+
+#top-head ul ul {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    margin-left: -32px;
+    margin-top: 10px;
+    background-color: #10002b;
+    z-index: 1;
+}
+
+#top-head ul ul li {
+    display: block;
+    padding: 8px 12px;
+    width: 200px;
+    height: 40px;
+    white-space: nowrap;
+}
+
+#top-head li:hover > .dropdown {
+    display: block;
+}
+
+#top-head li:hover > .dropdown li:hover {
+    color: #e0aaff
+}
+
+.formContainer {
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    font-size: 28px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background-color: #15003a;
+    border-radius: 10px;
+    color: #9d4edd;
+ }
+
+ ::placeholder {
+    color: rgb(69, 30, 136);
+ }
+
+ .signup-button {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #15003a;
+    color: #9d4edd;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 103.3%;
+    border-radius: 10px;
+ }
+
+ .signup-button:hover {
+    color: #e0aaff;
+    background-color: #1e0052;
+ }
+
+ input:invalid {
+    border: #ff0000 2px linear;
+ }
+
