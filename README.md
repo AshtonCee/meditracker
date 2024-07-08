@@ -11,7 +11,7 @@ Uses various api's in order to populate the site with all of the different types
 * Add server authentication for signup and login pages.
 * Populate each page with it's respective media/categories
 * Create profile page
-  ** Stats page
-  ** Progress bars for media completion
-  ** Total days spent watching/reading/playing
+  * Stats page
+  * Progress bars for media completion
+  * Total days spent watching/reading/playing
 * Implement already created achievement-tracker program, which was written in python, onto the webpage
